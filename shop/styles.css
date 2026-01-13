@@ -1,0 +1,534 @@
+/* ================= RESET / BASE ================= */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+body.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* ================= HEADER ================= */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.logo-img {
+  width: 3.2rem;
+  aspect-ratio: 1;
+}
+
+/* ================= BURGER ================= */
+#burger-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 3rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  position: relative;
+  z-index: 1100;
+  cursor: pointer;
+}
+
+.menu-line {
+  width: 2rem;
+  height: 0.2rem;
+  background-color: #000;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#burger-menu.active > span {
+  background: white;
+}
+
+#burger-menu.active > span:nth-child(1) {
+  transform: translateY(0.7rem) rotate(45deg);
+}
+
+#burger-menu.active > span:nth-child(2) {
+  opacity: 0;
+}
+
+#burger-menu.active > span:nth-child(3) {
+  transform: translateY(-0.5rem) rotate(-45deg);
+}
+
+.error {
+  text-align: center;
+  color: red;
+  font-size: 1.4rem;
+}
+
+.success {
+  text-align: center;
+  color: green;
+  font-size: 1.4rem;
+}
+
+/* ================= NAV (MOBILE OVERLAY) ================= */
+.header-nav {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: orange;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.header-nav.active {
+  transform: translateX(0);
+}
+
+.menu-list,
+.menu-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-list {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.menu-item {
+  font-size: 1.6rem;
+  font-weight: bold;
+  position: relative;
+}
+
+.menu-link {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 0.5rem 1rem;
+}
+
+.menu-item ul {
+  display: none;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.menu-item.active ul {
+  display: flex;
+}
+
+.menu-item ul li a {
+  color: white;
+}
+
+/* ================= CONTENT ================= */
+#page-title {
+  text-align: center;
+  margin: 0;
+}
+
+#products-catalog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+figcaption {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 1rem;
+}
+
+.product-img {
+  width: 20rem;
+}
+
+.product-button {
+  width: 12rem;
+  height: 2.2rem;
+  background-color: orange;
+  color: white;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* ================= FOOTER (MOBILE) ================= */
+footer {
+  width: 100%;
+  background-color: orange;
+}
+
+#footer-motto {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.8rem;
+  padding-top: 1.5rem;
+}
+
+.footer-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.law {
+  text-align: center;
+  padding-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+
+
+#about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+#about-container p {
+  background-color: rgba(124, 124, 124, 0.411);
+  padding: 2rem;
+  border-radius: 2rem;
+  font-size: 1.3rem;
+}
+
+#concact-text {
+  text-align: center;
+}
+
+#concact-text p {
+  text-align: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 1.3em;
+}
+
+#concact-text h1 {
+  font-size: 2rem;
+}
+
+#concact-form form {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+#concact-form form label {
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+}
+
+#concact-form form input,
+#concact-form form textarea {
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  font-size: 1rem;
+  border: 1px solid black;
+}
+
+#page-title {
+  margin-bottom: 1rem;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.form-container form label, .form-container form input {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.form-container {
+  height: 50vh;
+}
+
+.form-container form label {
+  margin-bottom: 0.5rem;
+  font-size: 1.6rem;
+}
+
+.form-container form input {
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  font-size: 1.3rem;
+  border: 1px solid black;
+}
+
+/* ================= MEDIA QUERIES ================= */
+
+/* Tablet / większy mobile */
+@media screen and (min-width: 999px) and (min-height: 699px){
+  .logo-img { 
+    width: 5rem; 
+  }
+
+  #burger-menu { 
+    width: 5rem; 
+    height: 3rem; 
+  }
+
+  .menu-line { 
+    width: 3.7rem; 
+    height: 0.3rem; 
+  }
+
+  #page-title { 
+    font-size: 3rem; 
+  }
+
+  .menu-item { 
+    font-size: 2.8rem; 
+    font-weight: normal; 
+  }
+
+  .product-img {
+    width: 32rem; 
+  }
+
+  figcaption { 
+    font-size: 2rem; 
+    }
+
+  .product-button { 
+    width: 17rem; 
+    height: 3rem; 
+    font-size: 1.6rem; 
+  }
+
+  .menu-item ul { 
+    gap: 1rem; 
+  }
+
+  .menu-item ul li { 
+    padding-top: 1.5rem;
+  }
+
+  #footer-motto {
+    font-size: 2rem;
+  }
+
+  .footer-item {
+    font-size: 2rem;
+  }
+
+  .law {
+    font-size: 2rem;
+  }
+
+  #about-container p {
+    font-size: 1.7rem;
+  }
+
+  #burger-menu.active > span:nth-child(1) {
+    transform: translateY(0.7rem) rotate(45deg);
+  }
+
+  #burger-menu.active > span:nth-child(2) {
+    opacity: 0;
+  }
+
+  #burger-menu.active > span:nth-child(3) {
+    transform: translateY(-1.1rem) rotate(-45deg);
+  }
+}
+
+/* Duży tablet / mały PC */
+@media screen and (min-width: 1199px) and (min-height: 699px){
+  .logo-img { 
+    width: 6rem; 
+  }
+
+  .product-img { 
+    width: 35rem; 
+  }
+
+  figcaption { 
+    font-size: 2.2rem; 
+  }
+
+  .product-button { 
+    width: 18rem; 
+    height: 3.2rem; 
+    font-size: 2rem; 
+  }
+
+  #footer-motto {
+    font-size: 2rem;
+  }
+
+  .law {
+    font-size: 2rem;
+  }
+}
+
+/* Desktop / duży ekran */
+@media screen and (min-width: 1699px) {
+  #burger-menu {
+    display: none;
+  }
+
+  .logo-img {
+    margin-left: 2rem;
+  }
+
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #page-title {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    text-align: center;
+    width: 100%;
+    font-size: 3rem;
+  }
+
+  #products-catalog {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  } 
+
+  figure {
+    width: auto;
+  }
+
+  figcaption {
+    font-size: 2rem;
+  }
+
+  .product-button {
+    width: 14rem;
+    height: 2.6rem;
+    font-size: 1.5rem;
+  }
+
+  .product-img {
+    width: 36rem;
+  }
+
+  .header-nav {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    transform: none;
+    background: none;
+    position: static;
+    z-index: auto;
+  }
+
+  .menu-list {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    height: auto;
+    width: max-content;
+    gap: 2rem;
+    font-weight: normal;
+    align-items: center;
+  }
+
+  .menu-item {
+    position: relative;
+  }
+
+  .menu-item .menu-link {
+    font-size: 1.5rem;
+    color: black;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: .3s ease-in-out;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 2rem;
+  }
+
+  #footer-motto {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .law {
+    text-align: center;
+  }
+
+  .footer-nav {
+    display: none;
+  }
+
+  #about-container {
+    height: auto;
+    padding-left: 25rem;
+    padding-right: 25rem;
+  } 
+
+  #about-container h1 {
+    font-size: 3rem;
+  }
+
+  #about-container p {
+    font-size: 1.8rem;
+  }
+
+  .form-container {
+    height: 56vh;
+  }
+}
