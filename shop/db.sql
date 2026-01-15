@@ -18,7 +18,8 @@ CREATE TABLE IF NOT EXISTS messages (
 
 CREATE TABLE IF NOT EXISTS motors (
     id_motor INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,      
+    name VARCHAR(255) NOT NULL,
+    description VARCHAR(255) NOT NULL, 
     price DECIMAL(10,2) NOT NULL,     
     image VARCHAR(255) NOT NULL       
 );
@@ -29,4 +30,5 @@ INSERT INTO motors (name, description, 	price, image) VALUES
 ("Husqvarna TC 250", "Husqvarna TC 250", 60000, "./assets/husqvarna-tc-250.png"),
 ("Husqvarna TC 300 Heritage", "Husqvarna TC 300 Heritage", 65000, "./assets/husqvarna-tc-300-heritage.png"),
 ("Husqvarna FC 250", "Husqvarna FC 250", 59900, "./assets/husqvarna-fc-250.png"),
+
 ("Husqvarna FC 450", "Husqvarna FC 450", 59900, "./assets/husqvarna-fc-450.png");
